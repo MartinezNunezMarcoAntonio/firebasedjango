@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Firebase</title>
+    {% load bootstrap4 %} {% bootstrap_css%}
+  </head>
+  <body>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <td width="35%">Nombre</td>
+          <td>Precio</td>
+          <td>Stock</td>
+          <td>Imagen</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for postre in productos %}
+        <tr>
+          <td>{{ postre.nombre }}</td>
+          <td>{{ postre.precio }}</td>
+          <td>{{ postre.stock}}</td>
+          <td><img src="{{postre.img}}" alt="{{postre.nombre}}" class="img-fluid" width="7%"></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      {% bootstrap_javascript jquery='full' %}
+  </body>
+</html>
